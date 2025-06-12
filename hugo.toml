@@ -1,8 +1,8 @@
 baseURL = 'https://huynambka.github.io/'
 languageCode = 'en-us'
-title = 'huynambka'
+title = 'shibajutsu'
 theme = 'archie'
-copyright = "© huynambka"
+copyright = "© shibajutsu"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
