@@ -1,5 +1,5 @@
 baseURL = 'https://huynambka.github.io/'
-languageCode = 'en-us'
+languageCode = 'vn'
 title = 'shibajutsu'
 theme = 'archie'
 copyright = "© shibajutsu"
@@ -8,9 +8,9 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-mode = "auto"
+mode = "dark"
 useCDN = false
-subtitle = "Welcome to my personal website"
+subtitle = "Dối lòng sẽ bị quạ bắt diều hâu tha"
 
 [[menu.main]]
 name = "Home"

@@ -22,7 +22,7 @@ Trang web tồn tại lỗ hổng tại chức năng preview hình ảnh, server
 
 Server đã filter một số protocol đọc file:
 
-```java=
+```java
 public boolean isValidScheme(String scheme) {
         return !scheme.contains("jar") && !scheme.contains("ftp") && !scheme.contains("jrt") && !scheme.contains("file");
 }

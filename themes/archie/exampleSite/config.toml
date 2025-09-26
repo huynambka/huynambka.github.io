@@ -1,5 +1,5 @@
 baseURL = "https://example.com"
-languageCode = "en-us"
+languageCode = "vn"
 title = "Archie"
 theme="archie"
 copyright = "© Athul"
@@ -7,7 +7,7 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 [params]
-	mode="auto"
+	mode="dark"
 	useCDN=false
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
 
