@@ -11,6 +11,7 @@ pygmentscodefencesguesssyntax = true
 mode = "dark"
 useCDN = false
 subtitle = "Dối lòng sẽ bị quạ bắt diều hâu tha"
+customCSS = ["css/custom.css"]
 
 [[menu.main]]
 name = "Home"
