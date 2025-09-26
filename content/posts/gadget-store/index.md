@@ -34,7 +34,7 @@ Tuy nhiên ta vẫn có thể sử dụng protocol `url:classpath://` để lấ
 
 Tồn tại lỗ hổng Insecure Deserialization tại method:
 
-```java=
+```java
 public String importPurchases(HttpSession session, Part filePart) {
         [...SNIP...]
         try {
@@ -60,10 +60,12 @@ Như đã nói, trang web cho phép người dùng import thông tin mua hàng t
 
 Thư viện `org.postgresql:org.postgresql:42.7.1` tồn tại [lỗ hổng SQL Injection](https://github.com/advisories/GHSA-24rp-q3w6-vc56).
 Để khai thác lỗ hổng này ta cần một số điều kiện.
+
 ![Điều kiện khai thác CVE-2024-1597](images/image.png)
+
 Thật may mắn làm sao khi mọi điều kiện đều được thỏa mãn:
 
-```java=
+```java
 private DataSource getDataSource() throws SQLException {
         String url = String.format("jdbc:postgresql://%s:5432/%s?user=%s&password=%s&ssl=false&connectTimeout=10", this.host, this.database, this.user, this.password);
         DataSource dataSource = new DataSource(this.getProperties(url));
@@ -77,7 +79,7 @@ private DataSource getDataSource() throws SQLException {
 Ta có thể đạt được điều này nhờ kết hợp với lỗ hổng Insecure Deserialize bên trên.
 Có được gadget chain như sau:
 
-```=
+```java
 java.util.Hashtable.readObject()
     java.util.Hashtable.reconstitutionPut()
         java.util.AbstractMap.equals()
@@ -88,7 +90,8 @@ Về cơ bản chain này lợi dụng hash collision các key của Hashtable �
 Nhưng mình sẽ giải thích kỹ một chút các ta tạo ra hash collision.
 
 Dưới đây là code exploit
-```java=
+
+```java
 UserDAO userDAO = new UserDAO();
 Database db = new Database();
 Field pwField = db.getClass().getDeclaredField("password");
@@ -111,13 +114,17 @@ hashtable.put(map2, 222);
 ```
 
 Khi hashtable được deserialize, key của các phần tử sẽ được tính toán hashCode trước khi put vào hashtable. Khi có hai key có cùng 1 hash, nó sẽ kiểm tra xem 2 key có giống nhau không bằng cách gọi hàm `equals()` của key.
+
 ![image](images/image-1.png)
 
 Sau đây mình sẽ phân tích tại sao code exploit trên có thể tạo ra được hash collision.
 Trước tiên ta cần biết cách class `LinkedHashMap` tính hashCode.
 Về bản chất class `LinkedHashMap` không implement method `hashCode()` nên nó sử dụng method này của class `AbstractMap`.
+
 ![alt text](images/image-2.png)
+
 Method `hashCode()` của entry (`LinkedHashMap$Entry`)
+
 ![alt text](images/image-3.png)
 
 Nên ta có thể thay thế `LinkedHashMap` với những class extends `AbstractMap` và không tự triển khai method `hashCode()`.
@@ -141,4 +148,4 @@ Phần còn lại của challenge là khai thác lỗ hổng SQL Injection để
 
 # Kết
 
-Qua challenge này mình nhận ra một cách rõ ràng hơn là mình còn quá yếu trong món Java nói chung và Java Insecure Deserialization nói riêng, mình đã ngồi hơn 3 ngày chỉ để đi tìm gadget chain nhưng không được, tưởng  "xa tận chân trời và gần ngay trước mắt".
+Qua challenge này mình nhận ra một cách rõ ràng hơn là mình còn quá yếu trong món Java nói chung và Java Insecure Deserialization nói riêng, mình đã ngồi hơn 3 ngày chỉ để đi tìm gadget chain nhưng không được, tưởng "xa tận chân trời mà gần ngay trước mắt".
