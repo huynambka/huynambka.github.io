@@ -190,3 +190,9 @@ a:hover {
   border-style: solid;
   border-color: #ffd700;
 }
+
+/* Dark mode toggle hover styles for dark theme */
+#dark-mode-toggle:hover {
+  background-color: var(--darkMaincolor);
+  color: black;
+}
