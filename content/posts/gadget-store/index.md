@@ -14,7 +14,7 @@ tags = ['ctf', 'java', 'deserialize', 'gadget chain']
 
 Trang web là một cửa hàng cho phép người dùng mua hàng, các sản phẩm đã mua sẽ được lưu trong session. Khi người dùng export thông tin mua hàng, thông tin mua hàng sẽ được serialized và người dùng tải về, ngược lại người dùng cũng có thể upload file .ser (chứa data đã serialized) để import thông tin mua hàng mua mình.
 
-# Soluction
+# Solution
 
 Bài này mình không làm được cho đến tận khi có writeup nên dưới đây chỉ là những thông tin mình tổng hợp và tóm tắt lại.
 
