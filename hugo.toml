@@ -8,7 +8,7 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-mode = "dark"
+mode = "toggle"
 useCDN = false
 subtitle = "Dối lòng sẽ bị quạ bắt diều hâu tha"
 customCSS = ["css/custom.css"]
