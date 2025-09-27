@@ -399,3 +399,8 @@ table td{
   stroke-linejoin: round;
   fill: none;
 }
+
+#dark-mode-toggle:hover {
+  background-color: var(--hovercolor);
+  color: #fff;
+}

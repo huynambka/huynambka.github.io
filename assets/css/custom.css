@@ -22,7 +22,4 @@
   transition: background-color 0.2s ease;
 }
 
-#dark-mode-toggle:hover {
-  background-color: var(--hovercolor);
-  color: #fff;
-}
+
