@@ -9,15 +9,9 @@
   text-align: center;
 }
 
-.post-content :not(pre) > code {
-  background-color: #343532;
-  color: #ffffff;
-}
-
 /* Dark mode toggle hover styles */
 #dark-mode-toggle {
   cursor: pointer;
-  padding: 4px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
