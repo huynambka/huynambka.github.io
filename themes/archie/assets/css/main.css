@@ -99,15 +99,20 @@ figure h4::before {
 
 /* Code blocks */
 code {
-  background-color: #f1f1f1;
-  padding: .1em .2em;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  padding: .2em .4em;
 }
 
 pre {
-  background-color: #ececec;
-  line-height: 1.4;
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  line-height: 1.45;
   overflow-x: auto;
-  padding: 1em;
+  padding: 16px;
+  margin: 1em 0;
 }
 
 .highlight pre ::selection {
@@ -303,74 +308,136 @@ svg{
 .highlight {
   position: relative;
   -webkit-overflow-scrolling: touch;
+  margin: 1em 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.highlight pre {
+  margin: 0;
+  border: none;
+  background-color: #f6f8fa;
 }
 .highlight pre code[class*="language-"] {
   -webkit-overflow-scrolling: touch;
 }
 .highlight pre code[class*="language-"]::before {
-  background: black;
-  border-radius: 0 0 0.25rem 0.25rem;
+  background: #586069;
+  border-radius: 0 0 0 4px;
   color: white;
-  font-size: 12px;
-  letter-spacing: 0.025rem;
-  padding: 0.1rem 0.5rem;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
   position: absolute;
-  right: 1rem;
-  text-align: right;
+  right: 0;
+  text-align: center;
   text-transform: uppercase;
   top: 0;
+  min-width: 40px;
 }
 
 .highlight pre code[class=language-javaScript]::before,
 .highlight pre code[class="language-js"]::before {
-content: "js";
-background: #f7df1e;
-color: black;
+  content: "js";
+  background: #f7df1e;
+  color: #323330;
 }
 .highlight pre code[class*='language-yml']::before,
 .highlight pre code[class*='language-yaml']::before {
-content: 'yaml';
-background: #f71e6a;
-color: white;
+  content: 'yaml';
+  background: #cb171e;
+  color: white;
 }
 .highlight pre code[class*='language-shell']::before,
 .highlight pre code[class*='language-bash']::before,
 .highlight pre code[class*='language-sh']::before {
-content: 'shell';
-background: green;
-color:white
+  content: 'shell';
+  background: #89e051;
+  color: #2d3748;
 }
-.highlight pre code[class*='language-json']::before{
-content: 'json';
-background: dodgerblue;
- color: #000000 
+.highlight pre code[class*='language-json']::before {
+  content: 'json';
+  background: #1e90ff;
+  color: white;
 }
 .highlight pre code[class*='language-python']::before,
 .highlight pre code[class*='language-py']::before {
-content: 'py';
-background: blue;
-color: yellow ;
+  content: 'py';
+  background: #3776ab;
+  color: #ffd43b;
 }
-.highlight pre code[class*='language-css']::before{
-content: 'css';
-background: cyan;
-color: black ;
+.highlight pre code[class*='language-css']::before {
+  content: 'css';
+  background: #1572b6;
+  color: white;
 }
-.highlight pre code[class*='language-go']::before{
-content: 'Go';
-background: cyan;
-color: royalblue ;
+.highlight pre code[class*='language-go']::before {
+  content: 'go';
+  background: #00add8;
+  color: white;
 }
 .highlight pre code[class*='language-md']::before,
-.highlight pre code[class*='language-md']::before{
-content: 'Markdown';
-background: royalblue;
-color: whitesmoke ;
+.highlight pre code[class*='language-markdown']::before {
+  content: 'md';
+  background: #083fa1;
+  color: white;
 }
-.highlight pre code[class*='language-ts']::before{
-  content: 'TS';
-  background: #3178C6;
-  color: #fff;
+.highlight pre code[class*='language-ts']::before,
+.highlight pre code[class*='language-typescript']::before {
+  content: 'ts';
+  background: #3178c6;
+  color: white;
+}
+
+/* Additional popular languages */
+.highlight pre code[class*='language-html']::before {
+  content: 'html';
+  background: #e34c26;
+  color: white;
+}
+
+.highlight pre code[class*='language-xml']::before {
+  content: 'xml';
+  background: #e34c26;
+  color: white;
+}
+
+.highlight pre code[class*='language-toml']::before {
+  content: 'toml';
+  background: #9c4221;
+  color: white;
+}
+
+.highlight pre code[class*='language-dockerfile']::before,
+.highlight pre code[class*='language-docker']::before {
+  content: 'docker';
+  background: #2496ed;
+  color: white;
+}
+
+.highlight pre code[class*='language-rust']::before {
+  content: 'rust';
+  background: #ce422b;
+  color: white;
+}
+
+.highlight pre code[class*='language-java']::before {
+  content: 'java';
+  background: #ed8b00;
+  color: white;
+}
+
+.highlight pre code[class*='language-php']::before {
+  content: 'php';
+  background: #777bb4;
+  color: white;
+}
+
+.highlight pre code[class*='language-ruby']::before,
+.highlight pre code[class*='language-rb']::before {
+  content: 'ruby';
+  background: #cc342d;
+  color: white;
 }
 
 /* table */

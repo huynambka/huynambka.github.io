@@ -196,3 +196,22 @@ a:hover {
   background-color: var(--darkMaincolor);
   color: black;
 }
+
+/* Dark mode code block styles */
+code {
+  background-color: #2d3748;
+  color: #e2e8f0;
+}
+
+pre {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+}
+
+.highlight pre {
+  background-color: #2d3748;
+}
+
+.highlight pre code[class*="language-"]::before {
+  background: #4a5568;
+}
