@@ -2,9 +2,8 @@
 date = '2025-09-26T21:00:00+07:00'
 draft = false
 title = 'Gadget Store'
-tldr = 'Phân tích nhanh gadget chain trong challenge Gadget Store (Smart Banking 6th)'
+description = 'Phân tích nhanh gadget chain trong challenge Gadget Store (Smart Banking 6th)'
 tags = ['ctf', 'java', 'deserialize', 'gadget chain']
-toc = true
 +++
 
 # Gadget Store
