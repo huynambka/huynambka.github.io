@@ -12,6 +12,18 @@ mode = "dark"
 useCDN = false
 subtitle = "Dối lòng sẽ bị quạ bắt diều hâu tha"
 customCSS = ["css/custom.css"]
+mathjax = true # enable MathJax support
+katex = true # enable KaTeX support
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/huynambka"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://linkedin.com/in/huynambka/"
 
 [[menu.main]]
 name = "Home"
