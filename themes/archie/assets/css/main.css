@@ -99,7 +99,7 @@ figure h4::before {
 
 /* Code blocks */
 code {
-  background-color: #f6f8fa;
+  background-color: #c0c0c0;
   border-radius: 3px;
   font-size: 85%;
   padding: .2em .4em;
