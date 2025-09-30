@@ -223,9 +223,14 @@ pre {
   color: #e2e8f0;
 }
 
+#search-input::placeholder {
+  color: #a0aec0;
+}
+
 #search-input:focus {
   border-color: var(--darkMaincolor);
   background-color: #1a202c;
+  color: #e2e8f0;
 }
 
 .results-count {
