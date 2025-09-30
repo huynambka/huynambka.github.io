@@ -40,7 +40,17 @@
   background-color: #f6f8fa;
   transition: border-color 0.2s ease, background-color 0.2s ease;
   font-family: 'Fira Sans', sans-serif;
-  color: inherit;
+  color: #232333;
+}
+
+#search-input::placeholder {
+  color: #666;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--maincolor);
+  background-color: #fff;
 }
 
 #search-input:focus {
