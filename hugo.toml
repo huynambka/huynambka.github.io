@@ -7,6 +7,9 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [params]
 mode = "toggle"
 useCDN = false
@@ -44,3 +47,8 @@ weight = 3
 name = "Tags"
 url = "/tags"
 weight = 4
+
+[[menu.main]]
+name = "Search"
+url = "/search"
+weight = 5

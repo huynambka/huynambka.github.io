@@ -1,0 +1,126 @@
+{{ define "main" }}
+<div class="search-container">
+    <h1 class="title">Search</h1>
+    
+    <div class="search-form">
+        <input type="search" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <div id="search-results"></div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+// Search functionality
+var searchInput = document.getElementById('search-input');
+var searchResults = document.getElementById('search-results');
+var searchIndex, searchData;
+
+// Load search index
+fetch('/index.json')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        searchData = data;
+        
+        // Build Lunr index
+        searchIndex = lunr(function() {
+            this.field('title', { boost: 10 });
+            this.field('tags', { boost: 5 });
+            this.field('contents');
+            this.ref('permalink');
+            
+            data.forEach(function(doc) {
+                this.add(doc);
+            }, this);
+        });
+    })
+    .catch(function(error) {
+        console.error('Error loading search index:', error);
+    });
+
+// Search function
+function performSearch(query) {
+    if (!searchIndex || query.length < 2) {
+        searchResults.innerHTML = '';
+        return;
+    }
+    
+    var results = searchIndex.search(query);
+    displayResults(results, query);
+}
+
+// Display search results
+function displayResults(results, query) {
+    if (results.length === 0) {
+        searchResults.innerHTML = '<p class="no-results">No results found for "' + query + '"</p>';
+        return;
+    }
+    
+    var html = '<div class="results-count">' + results.length + ' result(s) found for "' + query + '"</div>';
+    html += '<div class="search-results-list">';
+    
+    results.forEach(function(result) {
+        var item = searchData.find(function(data) {
+            return data.permalink === result.ref;
+        });
+        
+        if (item) {
+            var snippet = item.contents.substring(0, 200) + '...';
+            // Highlight search terms
+            var highlightedTitle = highlightSearchTerms(item.title, query);
+            var highlightedSnippet = highlightSearchTerms(snippet, query);
+            
+            html += '<div class="search-result-item">';
+            html += '<h3><a href="' + item.permalink + '">' + highlightedTitle + '</a></h3>';
+            html += '<p class="result-snippet">' + highlightedSnippet + '</p>';
+            html += '<div class="result-meta">';
+            html += '<span class="result-date">' + new Date(item.date).toLocaleDateString() + '</span>';
+            if (item.tags && item.tags.length > 0) {
+                html += '<span class="result-tags">';
+                item.tags.forEach(function(tag) {
+                    html += '<span class="tag">' + tag + '</span>';
+                });
+                html += '</span>';
+            }
+            html += '</div>';
+            html += '</div>';
+        }
+    });
+    
+    html += '</div>';
+    searchResults.innerHTML = html;
+}
+
+// Highlight search terms
+function highlightSearchTerms(text, query) {
+    if (!query) return text;
+    
+    var words = query.toLowerCase().split(/\s+/);
+    var highlightedText = text;
+    
+    words.forEach(function(word) {
+        if (word.length > 1) {
+            var regex = new RegExp('(' + word + ')', 'gi');
+            highlightedText = highlightedText.replace(regex, '<mark>$1</mark>');
+        }
+    });
+    
+    return highlightedText;
+}
+
+// Event listeners
+searchInput.addEventListener('input', function() {
+    var query = this.value.trim();
+    performSearch(query);
+});
+
+// Clear results when input is cleared
+searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        this.value = '';
+        searchResults.innerHTML = '';
+    }
+});
+</script>
+{{ end }}

@@ -12,8 +12,143 @@
 /* Dark mode toggle hover styles */
 #dark-mode-toggle {
   cursor: pointer;
+  padding: 4px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+}
+
+#dark-mode-toggle:hover {
+  background-color: var(--hovercolor);
+  color: #fff;
+}
+
+/* Search page styles */
+.search-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em 1ch;
+}
+
+.search-form {
+  margin: 2em 0;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid var(--bordercl);
+  border-radius: 6px;
+  background-color: #f6f8fa;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--maincolor);
+  background-color: #fff;
+}
+
+#search-results {
+  margin-top: 2em;
+}
+
+.results-count {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.no-results {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 2em;
+}
+
+.search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.search-result-item {
+  padding: 1.5em;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  background-color: #f6f8fa;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: #fff;
+  border-color: var(--maincolor);
+}
+
+.search-result-item h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.25rem;
+}
+
+.search-result-item h3::before {
+  content: none;
+}
+
+.search-result-item h3 a {
+  color: var(--maincolor);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.search-result-item h3 a:hover {
+  background-color: var(--hovercolor);
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.result-snippet {
+  margin: 0.5em 0 1em 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.result-meta {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.result-date {
+  font-weight: 500;
+}
+
+.result-tags {
+  display: flex;
+  gap: 0.5em;
+}
+
+.result-tags .tag {
+  background-color: var(--maincolor);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+/* Search term highlighting */
+mark {
+  background-color: var(--maincolor);
+  color: #fff;
+  padding: 1px 2px;
+  border-radius: 2px;
+  font-weight: 500;
 }
 
 
