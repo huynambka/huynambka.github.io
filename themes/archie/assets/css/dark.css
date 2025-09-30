@@ -234,47 +234,47 @@ pre {
 }
 
 .results-count {
-  color: #a0aec0;
-  border-bottom-color: #4a5568;
+  color: #a0aec0 !important;
+  border-bottom-color: #4a5568 !important;
 }
 
 .no-results {
-  color: #a0aec0;
+  color: #a0aec0 !important;
 }
 
 .search-result-item {
-  background-color: #2d3748;
-  border-color: #4a5568;
+  background-color: #2d3748 !important;
+  border-color: #4a5568 !important;
 }
 
 .search-result-item:hover {
-  background-color: #1a202c;
-  border-color: var(--darkMaincolor);
+  background-color: #1a202c !important;
+  border-color: var(--darkMaincolor) !important;
 }
 
 .search-result-item h3 a {
-  color: var(--darkMaincolor);
+  color: var(--darkMaincolor) !important;
 }
 
 .search-result-item h3 a:hover {
-  background-color: var(--darkMaincolor);
-  color: black;
+  background-color: var(--darkMaincolor) !important;
+  color: black !important;
 }
 
 .result-snippet {
-  color: #a0aec0;
+  color: #a0aec0 !important;
 }
 
 .result-meta {
-  color: #a0aec0;
+  color: #a0aec0 !important;
 }
 
 .result-tags .tag {
-  background-color: var(--darkMaincolor);
-  color: black;
+  background-color: var(--darkMaincolor) !important;
+  color: black !important;
 }
 
 mark {
-  background-color: var(--darkMaincolor);
-  color: black;
+  background-color: var(--darkMaincolor) !important;
+  color: black !important;
 }
