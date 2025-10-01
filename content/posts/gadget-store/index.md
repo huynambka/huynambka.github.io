@@ -5,12 +5,9 @@ title = 'Gadget Store'
 description = 'Phân tích nhanh gadget chain trong challenge Gadget Store (Smart Banking 6th)'
 tags = ['ctf', 'java', 'deserialize', 'gadget chain']
 +++
-
-# Gadget Store
+# Tóm tắt
 
 Đây là một challenge web trong khuôn khổ sự kiện Smart Banking 6th.
-
-# Tóm tắt
 
 Trang web là một cửa hàng cho phép người dùng mua hàng, các sản phẩm đã mua sẽ được lưu trong session. Khi người dùng export thông tin mua hàng, thông tin mua hàng sẽ được serialized và người dùng tải về, ngược lại người dùng cũng có thể upload file .ser (chứa data đã serialized) để import thông tin mua hàng mua mình.
 
