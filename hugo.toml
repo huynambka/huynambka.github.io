@@ -17,6 +17,7 @@ subtitle = "Dối lòng sẽ bị quạ bắt diều hâu tha"
 customCSS = ["css/custom.css"]
 mathjax = true # enable MathJax support
 katex = true # enable KaTeX support
+favicon = favicon.png
 
 [[params.social]]
 name = "GitHub"

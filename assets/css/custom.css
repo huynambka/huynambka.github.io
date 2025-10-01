@@ -160,4 +160,55 @@ mark {
   font-weight: 500;
 }
 
+/* Increase font sizes for better readability */
+body {
+  font-size: 18px; /* Increased from default 16px */
+  line-height: 1.6;
+}
+
+.post-content, .content {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.post-content p, .content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 1.2em;
+}
+
+.post-content h1, .content h1 {
+  font-size: 2.2em; /* Slightly larger headings */
+}
+
+.post-content h2, .content h2 {
+  font-size: 1.8em;
+}
+
+.post-content h3, .content h3 {
+  font-size: 1.5em;
+}
+
+.post-content h4, .content h4 {
+  font-size: 1.3em;
+}
+
+/* List items */
+.post-content li, .content li {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 0.5em;
+}
+
+/* Navigation and header text */
+nav a {
+  font-size: 16px;
+}
+
+/* Description text in post lists */
+.description {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
 
