@@ -4,8 +4,17 @@ title = 'shibajutsu'
 theme = 'archie'
 copyright = "© shibajutsu"
 pygmentsstyle = "monokai"
-pygmentscodefences = false
-pygmentscodefencesguesssyntax = false
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    style = "monokai"
+    noClasses = true
+  [markup.goldmark.renderer]
+    unsafe = true
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
