@@ -203,6 +203,7 @@ body {
 
 .mermaid svg {
   display: block !important;
+  /* Let the SVG fill its container and scale proportionally via viewBox */
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
