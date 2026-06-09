@@ -1,5 +1,5 @@
 +++
-date = '2026-06-09T00:06:00+07:00'
+date = '2025-03-09T00:06:00+07:00'
 draft = false
 title = 'Kubernetes 101'
 description = 'Các thành phần cơ bản trong Kubernetes'

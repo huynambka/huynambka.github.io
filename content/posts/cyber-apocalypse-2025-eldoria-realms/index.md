@@ -1,5 +1,5 @@
 +++
-date = '2026-07-16T00:12:00+07:00'
+date = '2025-07-16T00:12:00+07:00'
 draft = false
 title = 'Cyber Apocalypse 2025: Eldoria Realms'
 description = 'Hệ thống có 2 services:'

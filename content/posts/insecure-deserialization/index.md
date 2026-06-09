@@ -1,5 +1,5 @@
 +++
-date = '2026-06-09T00:05:00+07:00'
+date = '2025-03-20T00:05:00+07:00'
 draft = false
 title = 'Insecure Deserialization 101'
 description = 'When developing a game, you may need to save a player’s run to a file so that you don’t lose their progress and they can return to where they left off.'

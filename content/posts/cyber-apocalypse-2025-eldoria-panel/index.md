@@ -1,5 +1,5 @@
 +++
-date = '2026-07-15T00:11:00+07:00'
+date = '2025-07-15T00:11:00+07:00'
 draft = false
 title = 'Cyber Apocalypse 2025: Eldoria Panel'
 description = 'Khi truy cập trang web, HTML sẽ được render từ server bằng một hàm render() từ triển khai.'

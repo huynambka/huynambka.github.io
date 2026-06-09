@@ -1,5 +1,5 @@
 +++
-date = '2026-06-09T00:02:00+07:00'
+date = '2025-05-14T00:02:00+07:00'
 draft = false
 title = 'HTB Proxy - Hackthebox challenge'
 description = 'https://github.com/hackthebox/business-ctf-2024/'
