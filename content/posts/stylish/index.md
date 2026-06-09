@@ -1,5 +1,5 @@
 +++
-date = '2026-06-09T00:01:00+07:00'
+date = '2025-06-09T00:01:00+07:00'
 draft = false
 title = 'Stylish - Hackthebox challenge'
 description = 'Đầu tiên thì cứ phải quan sát để phân tích xem khai thác vào đâu.'
