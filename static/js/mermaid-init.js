@@ -8,12 +8,32 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   await mermaid.run({ querySelector: '.mermaid' });
 
-  // After mermaid renders, remove its fixed inline dimensions so CSS can
-  // scale the SVG properly (width: 100%, height: auto via viewBox ratio).
+  // Size each diagram from its viewBox, then allow it to shrink to fit the
+  // content column. This avoids tiny SVGs from theme CSS and avoids stretching
+  // narrow diagrams to full width.
   document.querySelectorAll('.mermaid svg').forEach(function (svg) {
+    var viewBox = svg.getAttribute('viewBox');
+    var intrinsicWidth = null;
+
+    if (viewBox) {
+      var parts = viewBox.trim().split(/\s+/);
+      if (parts.length === 4) {
+        var parsedWidth = parseFloat(parts[2]);
+        if (!Number.isNaN(parsedWidth) && parsedWidth > 0) {
+          intrinsicWidth = parsedWidth + 'px';
+        }
+      }
+    }
+
     svg.removeAttribute('height');
     svg.removeAttribute('width');
-    svg.style.removeProperty('max-width');
-    svg.style.removeProperty('height');
+
+    if (intrinsicWidth) {
+      svg.style.setProperty('width', intrinsicWidth, 'important');
+    }
+
+    svg.style.setProperty('max-width', '100%', 'important');
+    svg.style.setProperty('max-height', 'none', 'important');
+    svg.style.setProperty('height', 'auto', 'important');
   });
 });

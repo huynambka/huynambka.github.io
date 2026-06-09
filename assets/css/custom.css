@@ -203,9 +203,9 @@ body {
 
 .mermaid svg {
   display: block !important;
-  /* Let the SVG fill its container and scale proportionally via viewBox */
-  width: 100% !important;
+  /* Keep Mermaid's intrinsic width and only shrink when needed */
   max-width: 100% !important;
+  max-height: none !important;
   height: auto !important;
   margin: 0 auto;
 }
@@ -227,5 +227,3 @@ nav a {
   font-size: 17px;
   line-height: 1.2;
 }
-
-
