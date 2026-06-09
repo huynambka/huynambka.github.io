@@ -8,6 +8,10 @@ function setTheme(mode) {
         document.getElementById("darkModeStyle").disabled=true;
 	e.href.baseVal = e.href.baseVal.replace(/#.*$/, "#moon")
     }
+
+    window.dispatchEvent(new CustomEvent("themechange", {
+        detail: { mode: mode }
+    }));
 }
 
 function toggleTheme() {
